@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Configuration;
 public class AutoConfiguration {
 
     @Bean
-    public Worker myWorker() {
-        return new Worker();
+    public ParallelWorker myWorker() {
+        return new ParallelWorker();
     }
 
     @Bean

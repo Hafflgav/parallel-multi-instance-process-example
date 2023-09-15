@@ -1,5 +1,6 @@
 package io.miragon.example;
 
+import io.miragon.miranum.connect.worker.api.Worker;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,12 +8,12 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class Worker {
+public class ParallelWorker {
 
-    @io.miragon.miranum.connect.worker.api.Worker(type = "my-type")
+    @Worker(type = "myWorker")
     public DoSomethingResult doSomething(DoSomethingCommand doSomethingCommand) {
         log.info("Received command: " + doSomethingCommand);
-        var result = doSomethingCommand.getCommand() + " result";
+        var result = doSomethingCommand.getCollectionItem() + " result";
         log.info("Returning result: " + result);
         return new DoSomethingResult(result);
     }
@@ -22,7 +23,7 @@ public class Worker {
     @AllArgsConstructor
     @NoArgsConstructor
     static class DoSomethingCommand {
-        private String command;
+        private String collectionItem;
     }
 
     @Getter

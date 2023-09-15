@@ -3,7 +3,7 @@
   <bpmn:collaboration id="Collaboration_1sxspxk">
     <bpmn:participant id="Participant_1kx4usl" name="Parallel Multi Instance Example" processRef="bulk-order-process" />
   </bpmn:collaboration>
-  <bpmn:process id="bulk-order-process" name="bulk-order-process" isExecutable="true">
+  <bpmn:process id="bulk-order-process" name="parallel_multi_instance_process" isExecutable="true">
     <bpmn:documentation />
     <bpmn:extensionElements />
     <bpmn:endEvent id="Event_1khjpex" name="End">
@@ -16,7 +16,7 @@
     <bpmn:subProcess id="Activity_0ff1d6f" name="Execute things in parallel">
       <bpmn:incoming>Flow_0kkidlk</bpmn:incoming>
       <bpmn:outgoing>Flow_0xn34bm</bpmn:outgoing>
-      <bpmn:multiInstanceLoopCharacteristics camunda:collection="${collection}" camunda:elementVariable="collection" />
+      <bpmn:multiInstanceLoopCharacteristics camunda:collection="${collection}" camunda:elementVariable="collectionItem##" />
       <bpmn:startEvent id="Event_1pokvv6">
         <bpmn:outgoing>Flow_0my9s3s</bpmn:outgoing>
       </bpmn:startEvent>
