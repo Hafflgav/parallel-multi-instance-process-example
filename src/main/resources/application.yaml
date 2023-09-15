@@ -4,8 +4,9 @@ camunda:
     client:
       base-url: http://localhost:8080/engine-rest
   autoDeploy:
-    enabled: false
+    enabled: true
   disable-backoff-strategy: true
+
 
 # Camunda Platform 8
 # local configuration:
@@ -21,4 +22,6 @@ camunda:
 #  region: bru-2
 #  clusterId:
 #  clientId:
+server:
+  port: 8081
 #  clientSecret:
