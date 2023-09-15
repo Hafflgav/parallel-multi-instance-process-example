@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RequiredArgsConstructor
-public class MyProcessStart {
+public class ProcessStart {
 
     private final StartProcessPort startProcessPort;
 

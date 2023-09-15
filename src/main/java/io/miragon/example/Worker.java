@@ -1,6 +1,5 @@
 package io.miragon.example;
 
-import io.miragon.miranum.connect.worker.api.Worker;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,9 +7,9 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class MyWorker {
+public class Worker {
 
-    @Worker(type = "my-type")
+    @io.miragon.miranum.connect.worker.api.Worker(type = "my-type")
     public DoSomethingResult doSomething(DoSomethingCommand doSomethingCommand) {
         log.info("Received command: " + doSomethingCommand);
         var result = doSomethingCommand.getCommand() + " result";
