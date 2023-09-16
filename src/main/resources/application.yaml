@@ -6,22 +6,9 @@ camunda:
   autoDeploy:
     enabled: true
   disable-backoff-strategy: true
+  basic-auth:
+    username: ${CAMUNDA_USERNAME:demo}
+    password: ${CAMUNDA_PASSWORD:demo}
 
-
-# Camunda Platform 8
-# local configuration:
-#zeebe.client:
-#  broker:
-#    gateway-address: localhost:26500
-#  security:
-#    plaintext: true
-#
-# SaaS configuration:
-#zeebe.client:
-#  cloud:
-#  region: bru-2
-#  clusterId:
-#  clientId:
 server:
   port: 8081
-#  clientSecret:
