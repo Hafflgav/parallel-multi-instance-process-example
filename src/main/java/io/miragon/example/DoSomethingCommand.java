@@ -10,5 +10,5 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DoSomethingCommand {
-    private String item;
+    private Object collectionItem;
 }

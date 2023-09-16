@@ -17,13 +17,15 @@
     <bpmn:serviceTask id="Activity_1t6b0x9" name="Execute worker" camunda:type="external" camunda:topic="myWorker">
       <bpmn:extensionElements>
         <camunda:inputOutput>
-          <camunda:inputParameter name="item">${collectionItem.toString()}</camunda:inputParameter>
+          <camunda:inputParameter name="collectionItem">${collectionItem.toString()}</camunda:inputParameter>
         </camunda:inputOutput>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_0iq6rmb</bpmn:incoming>
       <bpmn:outgoing>Flow_1d51af0</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:sequenceFlow id="Flow_1bfx6s8" sourceRef="StartEvent_1" targetRef="Activity_1fxaa3m" />
+    <bpmn:sequenceFlow id="Flow_1bfx6s8" sourceRef="StartEvent_1" targetRef="Activity_1fxaa3m">
+      <bpmn:extensionElements />
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1d51af0" sourceRef="Activity_1t6b0x9" targetRef="Event_1bek7tl" />
     <bpmn:sequenceFlow id="Flow_0iq6rmb" sourceRef="Activity_1fxaa3m" targetRef="Activity_1t6b0x9" />
   </bpmn:process>
