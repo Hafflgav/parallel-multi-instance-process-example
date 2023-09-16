@@ -13,7 +13,7 @@ public class AutoConfiguration {
     }
 
     @Bean
-    public ProcessStart myProcessStart(final StartProcessPort startProcessPort) {
+    public ProcessStart processStarter(final StartProcessPort startProcessPort) {
         return new ProcessStart(startProcessPort);
     }
 }
