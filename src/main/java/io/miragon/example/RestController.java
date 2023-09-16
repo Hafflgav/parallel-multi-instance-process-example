@@ -16,7 +16,7 @@ public class RestController {
 
     @CrossOrigin
     @GetMapping
-    public ResponseEntity<Void> starten() {
+    public ResponseEntity<Void> start() {
         processStarter.startProcess("parallel_multi_instance_process");
         return ResponseEntity.ok().build();
     }

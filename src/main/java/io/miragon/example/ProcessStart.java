@@ -21,7 +21,7 @@ public class ProcessStart {
         Map<String, Object> variables = new HashMap<>();
         variables.put("id", "myID1");
         variables.put("name", "myName");
-        List<String> collection = new ArrayList<>();
+        List<Object> collection = new ArrayList<>();
         collection.add("A");
         collection.add("B");
         collection.add("A");
