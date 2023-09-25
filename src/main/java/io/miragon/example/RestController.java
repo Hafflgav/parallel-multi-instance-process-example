@@ -1,23 +1,28 @@
 package io.miragon.example;
 
-import io.swagger.annotations.Api;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @org.springframework.web.bind.annotation.RestController
 @AllArgsConstructor
-@Api(tags = "start")
-@RequestMapping("/api/start")
 public class RestController {
     ProcessStart processStarter;
+    MessageCorrelation messageCorrelation;
 
     @CrossOrigin
     @GetMapping
+    @RequestMapping("/api/start")
     public ResponseEntity<Void> start() {
         processStarter.startProcess("parallel_multi_instance_process");
+        return ResponseEntity.ok().build();
+    }
+
+    @CrossOrigin
+    @PostMapping
+    @RequestMapping("/api/message")
+    public ResponseEntity<Void> triggerMessage(@RequestBody String correlationKey) {
+        messageCorrelation.correlateMessage("I've been correlated!", correlationKey);
         return ResponseEntity.ok().build();
     }
 }
